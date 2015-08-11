@@ -462,6 +462,12 @@ Comparison:
 
 ##### `Hash#fetch` with argument vs `Hash#fetch` + block [code](code/hash/fetch-vs-fetch-with-block.rb)
 
+> The difference here comes mainly from having to construct the
+> object passed as a regular argument to Hash#fetch regardless
+> if it will be used or not. If the default value is something
+> that already exists or needs to be created only once, like
+> a symbol, or a precomputed value the difference is much smaller (~ 2%)
+
 ```
 $ ruby -v code/hash/fetch-vs-fetch-with-block.rb
 ruby 2.2.1p85 (2015-02-26 revision 49769) [x86_64-darwin14]
